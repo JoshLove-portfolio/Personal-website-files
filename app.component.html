@@ -1,17 +1,1 @@
-<mat-sidenav-container class="navigation-container">
-	<mat-sidenav mode="side" opened>
-		<button mat-raised-button class="nav-buttons" color="primary" routerLink="/home">
-			<mat-icon>home</mat-icon>
-		</button>
-		<h2>Navigation</h2>
-	      <button mat-raised-button color="primary" routerLink="/about-me" class="nav-buttons"><span>About Me</span></button>
-	      <button mat-raised-button color="primary" routerLink="/resume" class="nav-buttons"><span>Resume</span></button>
-	      <button mat-raised-button color="primary" routerLink="/additionals" class="nav-buttons"><span>Additionals</span></button>
-	      <div>
-      		<a href="https://github.com/JoshLove-portfolio" target="_blank" mat-raised-button color="primary" class="git-button">
-      			Github <mat-icon>public</mat-icon>
-      			</a>
-      	</div>
-	</mat-sidenav>
-	<mat-sidenav-content><router-outlet></router-outlet></mat-sidenav-content>
-</mat-sidenav-container>
+<app-navcomponent></app-navcomponent>

@@ -1,0 +1,34 @@
+<mat-sidenav-container class="sidenav-container" color=accent>
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list>
+      <a mat-raised-button color="primary" class="nav-button" routerLink="/about-me">About Me</a>
+      <a mat-raised-button color="primary" class="nav-button" routerLink="/resume">Resume</a>
+      <a mat-raised-button color="primary" class="nav-button" routerLink="/additionals">Additionals</a>
+      <a mat-raised-button color="primary" class="git-button" href="https://github.com/JoshLove-portfolio" target="_blank">
+        <mat-icon>public</mat-icon>
+      Github</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>
+        <a mat-raised-button color="accent" class="home-button" routerLink="/home">
+          <mat-icon>home</mat-icon>
+        </a>
+      </span>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
